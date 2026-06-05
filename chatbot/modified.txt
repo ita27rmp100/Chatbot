@@ -1,0 +1,39 @@
+SUMMARY OF MODIFICATIONS IN CHATBOT SERVICE
+
+FILE: crud.js
+1. Fixed randomId function:
+   - Changed return value from the 'digits' pool to the actual generated 'random' string.
+   - Refactored the loop to use 'digits.length' for robust indexing.
+2. Cleaned up configuration:
+   - Removed unnecessary 'async' keyword as Firebase initialization is synchronous.
+3. Enhanced uploadProcessData:
+   - Fixed typo in error log (from 'uploadProcessedData' to 'uploadProcessData').
+   - Added a safety check to ensure 'firestoreDB' is initialized before attempting a write.
+4. Improved GetData:
+   - Added a safety check for 'firestoreDB' initialization.
+   - Standardized return value to empty array [] if not initialized.
+   - Removed redundant empty console.log().
+5. General Consistency:
+   - Standardized initialization guards across all CRUD functions.
+
+FILE: functions.js
+1. Refactored SimilarQuestion:
+   - Converted to an 'async' function.
+   - Now properly awaits 'get_ai_res' and returns the numeric index.
+2. Refactored FromDoc:
+   - Converted to an 'async' function.
+   - Replaced callback-based fs.readFile with fs.promises.readFile to allow awaiting.
+   - Now correctly awaits the AI response and returns it to the caller.
+3. Updated FromFireStore:
+   - Added a null-check for 'retrievedQuestions' to prevent crashes on first use or empty database.
+   - Use 'retrievedQuestions.length' instead of 'Object.keys().length' for cleaner iteration.
+4. Fixed Chatbot main logic:
+   - Corrected variable name bug: changed 'question' to 'qst' in the FromDoc call.
+   - Added missing 'await' for SimilarQuestion, FromDoc, and uploadProcessData calls.
+   - Added a safety check for the 'answr' variable before calling .includes() to prevent runtime errors.
+5. Standardized calls:
+   - Updated calls to configuration() to reflect its synchronous nature.
+6. Fixed Critical Crash (TypeError):
+   - Modified get_ai_res to always return a string message in the catch block instead of an Error object.
+   - Replaced hardcoded API key with process.env.OPENAI_API_KEY for security.
+   - Added typeof check in Chatbot to ensure 'answr' is a string before calling .includes().
