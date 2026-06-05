@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body class="min-h-screen bg-slate-100 text-slate-900">
+    <div class="mx-auto flex h-screen max-w-4xl flex-col p-4 sm:p-6 lg:p-8">
+      <div class="rounded-[32px] bg-white shadow-[0_24px_60px_rgba(15,23,42,0.12)] ring-1 ring-slate-200 overflow-hidden flex flex-col flex-1">
+        <header class="bg-slate-950 px-8 py-7 text-white">
+          <h1 class="text-3xl font-semibold tracking-tight"><%= title %></h1>
+          <p class="mt-2 text-sm text-slate-300">Start a conversation with your chatbot.</p>
+        </header>
+
+        <main id="chatBody" class="flex-1 overflow-y-auto px-6 py-8 bg-slate-50">
+          <div id="chatEmpty" class="text-center text-slate-500">Type a message to begin.</div>
+        </main>
+
+        <form id="chatForm" class="flex items-center gap-3 border-t border-slate-200 bg-white px-5 py-4">
+          <input id="chatInput" type="text" autocomplete="off" placeholder="Ask me something..." class="w-full rounded-full border border-slate-300 bg-white px-5 py-3 text-slate-900 shadow-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100"/>
+          <button type="submit" class="inline-flex items-center rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/javascripts/chat.js"></script>
   </body>
 </html>
