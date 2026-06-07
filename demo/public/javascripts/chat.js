@@ -4,14 +4,6 @@ $(document).ready(function () {
   const $chatBody = $('#chatBody');
   const $chatEmpty = $('#chatEmpty');
 
-  const botResponses = [
-  'Hello! How can I help you today?',
-  'That sounds interesting. Tell me more.',
-  'I can answer simple questions or help you explore ideas.',
-  'Thanks for your message! Anything else on your mind?',
-  'I am a simple chatbot UI. You can type any question and I will reply.'
-];
-
 function addMessage(content, type) {
   if ($chatEmpty.length) {
     $chatEmpty.hide();
@@ -33,29 +25,8 @@ function addMessage(content, type) {
 }
 
 function getBotReply(userText) {
-  const normalized = userText.trim().toLowerCase();
+  
 
-  if (!normalized) {
-    return 'Please type something so I can reply.';
-  }
-
-  if (normalized.includes('hello') || normalized.includes('hi')) {
-    return 'Hi there! What would you like to talk about?';
-  }
-
-  if (normalized.includes('help')) {
-    return 'Sure! I can help with simple questions and small talk.';
-  }
-
-  if (normalized.includes('how are you')) {
-    return 'I am doing great, thanks! How about you?';
-  }
-
-  if (normalized.includes('chatbot')) {
-    return 'I am a chatbot UI demo built for this page.';
-  }
-
-  return botResponses[Math.floor(Math.random() * botResponses.length)];
 }
 
 $chatForm.on('submit', function (event) {
