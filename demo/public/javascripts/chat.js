@@ -1,51 +1,68 @@
 $(document).ready(function () {
-  const $chatForm = $('#chatForm');
-  const $chatInput = $('#chatInput');
-  const $chatBody = $('#chatBody');
-  const $chatEmpty = $('#chatEmpty');
+    $('#ChatInput').focus();
+    const $chatForm = $('#chatForm');
+    const $chatInput = $('#chatInput');
+    const $chatBody = $('#chatBody');
+    const $chatEmpty = $('#chatEmpty');
 
-function addMessage(content, type) {
-  if ($chatEmpty.length) {
-    $chatEmpty.hide();
-  }
+    $chatInput.focus();
 
-  const commonClasses = 'max-w-[78%] rounded-3xl px-5 py-4 mb-1 text-sm leading-6 break-words shadow-sm';
-  const $message = $('<div></div>');
-  $message.addClass(commonClasses);
+    function addMessage(content, type) {
+        if ($chatEmpty.length) {
+            $chatEmpty.hide();
+        }
 
-  if (type === 'user') {
-    $message.addClass('mr-auto bg-slate-950 text-slate-100 rounded-bl-md');
-  } else {
-    $message.addClass('ml-auto bg-slate-300 text-slate-950 rounded-br-md');
-  }
+        const commonClasses = 'max-w-[78%] rounded-3xl px-5 py-4 mb-1 text-sm leading-6 break-words shadow-sm';
+        const $message = $('<div></div>');
+        $message.addClass(commonClasses);
 
-  $message.text(content);
-  $chatBody.append($message);
-  $chatBody.scrollTop($chatBody[0].scrollHeight);
-}
+        if (type === 'user') {
+            $message.addClass('mr-auto bg-slate-950 text-slate-100 rounded-bl-md');
+        } else {
+            $message.addClass('ml-auto bg-slate-300 text-slate-950 rounded-br-md');
+        }
 
-function getBotReply(userText) {
-  
+        $message.text(content);
+        $chatBody.append($message);
+        $chatBody.scrollTop($chatBody[0].scrollHeight);
+    }
 
-}
+    function getBotReply(userText) {
+        return $.ajax({
+            url: "http://localhost:3000/ai-response",
+            method: "POST",
+            contentType:"application/json",
+            data:JSON.stringify({
+                content:userText
+            }),
+            success: function(response) {
+                reply = response
+            },
+            error: function(xhr, status, error) {
+                reply = error
+            }
+        });
+    }
 
-$chatForm.on('submit', function (event) {
-  event.preventDefault();
-  event.stopPropagation();
+    $chatForm.on('submit', async function(event) {
+        event.preventDefault();
+        event.stopPropagation();
 
-  const message = $chatInput.val().trim();
-  if (!message) {
-    return false;
-  }
+        const message = $chatInput.val().trim();
+        if (!message) {
+            return false;
+        }
 
-  addMessage(message, 'user');
-  $chatInput.val('').focus();
+        addMessage(message, 'user');
+        $chatInput.val('').focus();
 
-  setTimeout(() => {
-    const reply = getBotReply(message);
-    addMessage(reply, 'bot');
-  }, 600);
-
-  return false;
-});
+        try{
+            const reply = await getBotReply(message);
+            addMessage(reply.response, 'bot');
+        }
+        catch(err){
+            addMessage("Error contacting server", 'bot');
+            console.error(err);
+        }
+    });
 });

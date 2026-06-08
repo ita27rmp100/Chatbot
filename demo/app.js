@@ -5,15 +5,22 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 // impor chatbot main function
-const Chatbot = require('../chatbot/app.js')
+const cb_server = require('../server/index.js') //cb_server <=> chatbot_server
 
 const indexRouter = require('./routes/index');
 
 const app = express();
 
-// GET Chatbot response
-app.get('/',(req,res)=>{
+app.use(express.json())
 
+// GET Chatbot response
+app.post('/ai-response',async (req,res)=>{
+  const qst = req.body.content;
+  let answer = await cb_server.Chatbot(qst)
+  console.log(answer)
+  res.json({
+    response:answer
+  })
 })
 // Ping
 app.get('/ping',(req,res)=>{

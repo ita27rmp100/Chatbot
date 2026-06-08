@@ -1,0 +1,173 @@
+RSB HOUSE : Real Estate Platform – User Guide and FAQ
+
+1. Platform Overview
+
+This platform is an intelligent real estate website for Algeria.
+It allows users to:
+
+- Search for houses or apartments for rent or sale.
+- Post property listings.
+- Contact property owners directly.
+- Compare prices by geographic area.
+- Get price suggestions using artificial intelligence.
+
+The platform is aimed at:
+- Buyers
+- Renters
+- Property owners
+- Real estate agents
+- In general: any adult resident in Algeria
+--------------------------------------------------
+
+2. How to Search for Housing
+
+To search for housing:
+
+1. Go to the search page.
+2. Select the province (wilaya) or municipality.
+3. Choose the property type (apartment, house, studio, etc.).
+4. Choose the transaction type (sale or rent).
+5. Optionally set a price range.
+6. Click the "Search" button.
+
+7. Or use the filter on the home page to go directly to the results page that matches your selected criteria.
+
+Results matching your search criteria will be displayed.
+--------------------------------------------------
+
+3. How to View a Listing's Details
+
+To view a listing's details:
+
+1. Click a listing from the search results.
+2. The listing details page will display:
+   - Property photos
+   - Price
+   - Location
+   - Property description
+   - Information about the lister
+3. You can then send a message to the property owner.
+--------------------------------------------------
+
+4. How to Post a Listing
+
+To post a new listing:
+
+1. Create an account or log in.
+2. Go to your dashboard.
+3. Click "Post Listing".
+4. Fill in the property information such as:
+   - Property type
+   - Province and municipality
+   - Price (the allowed price range is determined using an AI model)
+   - Area (size)
+   - Property description
+5. Add photos of the property.
+6. Click "Publish".
+
+Your listing request is processed immediately and you will be notified if it is ready to be published. Once approved it will appear on the listings page and on your profile page.
+--------------------------------------------------
+
+5. How to Contact the Property Owner
+
+To contact the lister:
+
+1. Open the listing page.
+2. Click the "Send Message" button.
+3. Write your message.
+4. Click send.
+
+The message will be delivered to the property owner via the platform's messaging system.
+--------------------------------------------------
+
+6. Messaging System
+
+The platform includes an internal messaging system that allows:
+
+- Sending messages between users.
+- Asking questions about properties.
+- Receiving replies from listers.
+- An AI system to monitor messages and help prevent fraud between parties.
+
+Notifications will appear in your dashboard.
+--------------------------------------------------
+
+7. Price Suggestions Using AI
+
+The platform uses an AI model to:
+
+- Estimate an appropriate price for a property and determine an allowable range for the lister when posting.
+- Compare prices across different areas.
+- Provide a rating or index for a neighborhood.
+- Monitor messages between users.
+- The smart assistant you are using now.
+
+These estimates are based on previously collected real estate data. Regarding the smart assistant, answers are based on information provided by the development team and previous user messages.
+--------------------------------------------------
+
+8. Frequently Asked Questions
+
+Q: Do I need an account to use the platform?
+A: No, you can search listings without an account. Posting a listing or sending messages requires an account.
+
+Q: Is posting a listing free?
+A: No, posting listings is part of the paid plan.
+
+Q: How can I edit my listing?
+A: You can edit your listing from the dashboard under "My Listings".
+
+Q: How can I delete a listing?
+A: Go to the dashboard, then "My Listings" and choose delete.
+
+Q: How do I know a listing is still available?
+A: If the listing still appears on the site, it is active.
+
+Q: How can I contact support?
+A: Contact support via the "Contact Us" page or through in-platform messages.
+
+Q: What plans are available (paid plan features)?
+A: Please check the offers section on the home page "Click here" (link:l/home#offers).
+
+Q: How is payment handled when buying or renting a property?
+A: Payment between buyer and seller and related processes (such as creating and notarizing contracts) are currently outside the platform's responsibility. The platform helps you find suitable properties.
+
+Q: How can I pay for a paid subscription?
+A: Either via BaridiMob following the steps on the site when selecting the paid plan at "link:home#offers" or contact support to upgrade your account if you encounter issues. Payment confirmation may be processed manually.
+--------------------------------------------------
+
+9. Common Issues
+
+Issue: I cannot log in.
+Solution: Verify your email and password.
+
+Issue: Unable to upload photos.
+Solution: Check your internet connection or image file size.
+
+Issue: I am not receiving messages.
+Solution: Check the Messages section in your dashboard.
+--------------------------------------------------
+
+10. Important Information
+
+- The platform does not guarantee the accuracy of all user-posted listings.
+- Users must verify information before any agreement.
+- It is recommended to visit the property in person before making a purchase or rental decision.
+- The platform is not responsible for disputes between parties after a transaction is confirmed, including payment delays.
+--------------------------------------------------
+
+11. Using the Smart Assistant (ChatBot)
+
+The smart assistant can help you with:
+
+- Understanding how to use the platform.
+- Answering general questions.
+- Providing responses to frequently asked questions.
+
+You can ask questions such as:
+
+- How do I post a listing?
+- How do I contact the property owner?
+- How do I search for a home?
+- How do I create an account?
+
+The assistant will try to provide the closest possible answer based on the available information.
