@@ -1,7 +1,10 @@
 # ChatBot
 A customizable AI chatbot that can be seamlessly integrated into any website.
+
 **License:** MIT.
+
 **Created by:** Abderahim (Me)
+
 ---
 ## Built with:
 - Node.js
